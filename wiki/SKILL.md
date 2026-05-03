@@ -130,6 +130,30 @@ The lint report is itself a markdown doc written to `~/knowledge/lint/<YYYY-MM-D
 
 See `lint.md` for the full lint procedure.
 
+## Three knowledge surfaces — never duplicate
+
+There are three places knowledge can live in this swarm. Each fact lives in **exactly one** of them:
+
+| Surface | What it holds | Example |
+|---|---|---|
+| **Wiki** (`~/knowledge/wiki/`) | World facts — true regardless of which agent reads it | "Iniminimo is a Wyoming LLC", "Eve is Ronen's wife" |
+| **Per-agent memory** (`~/.claude/projects/.../memory/`) | Behavioral / feedback — how *this* agent should act | "Ronen prefers terse answers", "use uv not pip" |
+| **CLAUDE.md** (project) | Identity + operational rules — who I am, how I operate | "You are Freddie", "voice messages → transcribe first" |
+
+**The rule when you spot a duplicate:**
+
+If a fact in your per-agent memory is actually a world fact (would be true for every agent, not just you), **move it to the wiki** and replace the memory entry with a one-line pointer:
+
+```markdown
+- [Iniminimo legal entity](pointer.md) — see `~/knowledge/wiki/decisions/2026-04-22-llc-state-wyoming.md`
+```
+
+Or just delete the memory entry if the wiki already covers it.
+
+If something in CLAUDE.md is a world fact, leave a *pointer* to the wiki page rather than restating the fact. CLAUDE.md should describe *behavior*, the wiki should describe *facts*.
+
+When in doubt — wiki is the default for facts, memory is the default for behavior.
+
 ## Decision framework — should this go in the wiki?
 
 Before saving anything, ask:
