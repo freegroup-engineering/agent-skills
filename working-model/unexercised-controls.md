@@ -44,6 +44,28 @@ Older members of the same family: an alert bound to a secret that never fires; a
 that fails open with no metric, so nobody can know what got through
 (see the board's Redis fail-open ticket, **INI-102** — *not* INI-101).
 
+## The near miss: a control exercised on the wrong axis
+
+There is a second shape the three questions above do **not** catch, because it answers them
+all correctly. A test that fires, passes legitimately, sits right next to the defect — and
+cannot see it, because it asserts a different axis of the same behaviour.
+
+PR #757, found 2026-08-24. A test named *"dismissing by the barrier is a NO, never a yes"*
+asserted the **outcome** was fail-closed when a parent tapped the barrier. That was true, and it
+had been passing honestly. The bug was that tapping the barrier mid-submit let the consent row
+land while the outcome said `cancelled` — **the defect was in the side effect, not the outcome**,
+so a test guarding the outcome could never have caught it however often it ran.
+
+The fix replaced it with a test asserting the barrier does not resolve the gate **at all**, and
+kept the old test's reasoning written above it rather than deleting it — the old assertion was
+not wrong, it was narrow.
+
+**So the extra question is: what does this control actually assert, as opposed to what does its
+name suggest it covers?** A green test whose name describes the risk and whose body checks one
+axis of it reads as coverage to everyone who does not open it. Closely related to the standing
+rule about a PR that gives an existing signal a second meaning: the tests that defended the
+consent close-code bug in July were each faithfully encoding the only meaning that had existed.
+
 ## What to do about one
 
 **Break it and watch.** A test that has never been red is the unfireable control one box down —
