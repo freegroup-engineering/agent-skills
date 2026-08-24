@@ -83,7 +83,8 @@ all-agents broadcast is the exception, not the default.
 | pair / purpose | channel |
 |---|---|
 | Ronen ↔ Nova (private) | `1491891485283582134` |
-| Ronen ↔ Cleo (design/creative) | `1491732936217854042` |
+| Ronen ↔ Cleo (private) — **Cleo's ticket threads hang off this** | `1495315776540770395` |
+| Nova ↔ Cleo (design-x-eng: design, copy, FE/BE contract) | `1491732936217854042` |
 | Ronen ↔ Mark (private) | `1541443066668261396` |
 | Ronen ↔ Boaz (private, SRE) | `1541442851114721280` |
 | Nova ↔ Mark (legal gate, vendor matrix, consent) | `1541444694242758706` |
@@ -93,9 +94,14 @@ all-agents broadcast is the exception, not the default.
 | #inmo-alerts — Alertmanager feed, not a conversation | `1525612971865276548` |
 | ~~Agent working channel~~ **being deleted** (Ronen, 2026-08-24) | ~~`1539952466144133170`~~ |
 
-**Gaps — ask Ronen, do not invent:** no dedicated shared channel for Nova↔Cleo peer traffic
-(`1491732936217854042` is Ronen↔Cleo), Cleo↔Boaz, or Mark↔Boaz. Margo is reachable only via
-Cleo — the relay bot has no access to `#inmo-creative` (`1498299327502745752`).
+**Gaps — ask Ronen, do not invent:** no dedicated shared channel for Cleo↔Boaz or Mark↔Boaz.
+Margo is reachable only via Cleo — the relay bot has no access to `#inmo-creative`
+(`1498299327502745752`).
+
+🔴 **`1491732936217854042` is Nova↔Cleo, not Ronen↔Cleo.** Corrected 2026-08-24 after Cleo
+opened a ticket thread off it, which would have put Ronen's conversation inside peer traffic.
+Every agent has both kinds of channel and they are easy to confuse: **the Ronen channel is the
+one where ticket threads hang off.** Check this table before opening a thread, not after.
 
 🔴 **Verified 2026-08-24: Margo and Boaz do NOT have `1493503507557388368` in their
 `access.json` groups**, so a broadcast to the real #inmo-all currently does not reach them.
