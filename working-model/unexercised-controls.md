@@ -61,7 +61,13 @@ kept the old test's reasoning written above it rather than deleting it — the o
 not wrong, it was narrow.
 
 **So the extra question is: what does this control actually assert, as opposed to what does its
-name suggest it covers?** A green test whose name describes the risk and whose body checks one
+name suggest it covers?** The name is the risk; the body is the coverage; nothing keeps them in
+sync.
+
+Operationally, for any state-changing action: **list the axes it can move** — return value,
+persisted row, network call, emitted event, navigation — and ask which of them the test actually
+checks. **Fail-closed on one axis is not fail-closed.** The #757 test was fail-closed on the
+outcome and silent on the row. A green test whose name describes the risk and whose body checks one
 axis of it reads as coverage to everyone who does not open it. Closely related to the standing
 rule about a PR that gives an existing signal a second meaning: the tests that defended the
 consent close-code bug in July were each faithfully encoding the only meaning that had existed.
