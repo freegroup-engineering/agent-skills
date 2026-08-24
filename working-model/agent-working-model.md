@@ -161,6 +161,34 @@ are not, because each is *measured on a stated date*. **A measurement with a dat
 the same number without one is a claim about now** — and it will still be asserted as a claim
 about now in three months.
 
+## Two mechanical habits that caught real failures today
+
+**Never inline a commit message or PR comment containing backticks.** The shell eats them as
+command substitution. Twice on 2026-08-24: one produced a visible `parse error near '>'` and got
+fixed; the other produced a *plausible mangled body* and **the push silently did not happen**.
+Same input, same day, opposite visibility — the difference was where the quote fell, not care.
+
+```bash
+cat > /tmp/body.md <<'BODY'     # QUOTED delimiter disables every expansion
+...backticks, $vars, whatever...
+BODY
+git commit -F /tmp/body.md      # or: gh pr comment N --body-file /tmp/body.md
+```
+Unquoted `<<BODY` still substitutes. The quotes are the whole point.
+
+**After every push, print the local and remote SHAs and compare them.**
+```bash
+git push -q origin main; git fetch -q origin
+echo "local=$(git rev-parse --short HEAD)  remote=$(git rev-parse --short origin/main)"
+```
+Do not trust a piped exit code — `git push ... | grep -v remote:` returns *grep's* status, not
+git's. This check was adopted in the morning after that exact trap and caught an unrelated silent
+push failure eight hours later.
+
+**Which is the argument for checks over habits, made by the check rather than by us.** A habit is
+a promise about attention; a check is a thing that runs when attention is elsewhere — and
+attention being elsewhere is precisely when both of the day's silent failures happened.
+
 ## Channel map
 
 Authoritative pair/topic map is `~/.claude/channel-topics.md` — this section is the
