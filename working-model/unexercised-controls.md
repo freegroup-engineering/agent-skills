@@ -72,6 +72,22 @@ axis of it reads as coverage to everyone who does not open it. Closely related t
 rule about a PR that gives an existing signal a second meaning: the tests that defended the
 consent close-code bug in July were each faithfully encoding the only meaning that had existed.
 
+## Choosing a case to validate a fix
+
+The same object appears one level up, in the case you pick to prove the repair works. A case
+that the **wrong** implementation would also pass is a ritual, not a test.
+
+> **Would the wrong implementation also pass this case?**
+> If yes, it proves nothing. If no case in the data separates the right implementation from the
+> wrong one, **that is the finding** — the fix cannot be validated yet, and saying so is the
+> honest result.
+
+Worked example, 2026-08-24. The `claude-review` fix keys the verdict on the run id. PR **#757**
+carries two verdict comments whose newest matches the current head — so a lazy *recency-based*
+implementation passes on it **by luck**. PR **#744** carries a superseded `REQUEST_CHANGES`
+first and a current `APPROVE` last, so recency gets it wrong there. **#744 is the discriminating
+case; #757 would have certified a broken fix as green.**
+
 ## What to do about one
 
 **Break it and watch.** A test that has never been red is the unfireable control one box down —
