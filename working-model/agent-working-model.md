@@ -28,6 +28,25 @@ His words: *"youre again just messsaging and messaging and not giving me a chanc
 This is the most-repeated correction on record. It is not about length — it is about not
 stacking three questions on him at once, because he can only answer the last one.
 
+🔴 **Nova broke this rule the same afternoon she wrote it here (2026-08-24), so the rule alone
+demonstrably does not work. The step that does:**
+
+**While waiting for his reply, new information ACCUMULATES into a draft — it does not become a
+send.** When he replies, the draft collapses into one message.
+
+- A subagent finishing is **not** an event that justifies a message. Neither is a verification
+  landing, nor a correction to something you already told him.
+- A correction merges into the next message **unless he is about to act on the wrong thing right
+  now** — e.g. about to merge on stale evidence. That exception is rare and must be argued, not
+  assumed.
+- Several unrelated topics go to their **own channels**, but still one message per channel.
+- The check before every send: **has he replied since my last message?** If no, don't send.
+
+His words: *"you didnt listen to my rules about not spamming me with tons of messages before i
+even get a chance to read and respond to 1."* Each individual message was justifiable; together
+they buried the decisions he was being asked for, because a new one kept arriving before he
+could answer the last.
+
 Length: ~120 words, lead with the answer, no emoji, no trailing recap. See [[comms]].
 
 ## 3. Never mix threads
