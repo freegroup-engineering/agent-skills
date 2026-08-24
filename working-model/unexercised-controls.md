@@ -82,11 +82,23 @@ that the **wrong** implementation would also pass is a ritual, not a test.
 > wrong one, **that is the finding** — the fix cannot be validated yet, and saying so is the
 > honest result.
 
-Worked example, 2026-08-24. The `claude-review` fix keys the verdict on the run id. PR **#757**
-carries two verdict comments whose newest matches the current head — so a lazy *recency-based*
-implementation passes on it **by luck**. PR **#744** carries a superseded `REQUEST_CHANGES`
-first and a current `APPROVE` last, so recency gets it wrong there. **#744 is the discriminating
-case; #757 would have certified a broken fix as green.**
+Worked example, 2026-08-24. The `claude-review` fix keys the verdict on the run id.
+
+PR **#744** carries a superseded `REQUEST_CHANGES` first and a current `APPROVE` last, so a
+*recency-based* implementation gets it wrong. **#744 discriminates.**
+
+PR **#757** does not, and the reason is worth following, because the first two explanations of
+why were both wrong. It was initially described as a case recency passes **by luck**. Checked at
+`15:33Z`, it had three `claude[bot]` comments: two stale verdicts (heads `cf7eff4c` and
+`ac39ef38`) and a newest comment carrying **no verdict at all**, from the run still in flight
+against the current head. So recency-over-verdicts returned a confident `APPROVE` about code no
+longer under review, and plain recency landed on the no-verdict branch. **Its answer flips with
+the timing of the fetch** — which makes it useless for validation in either direction, for a
+different reason than the one first given.
+
+The general lesson is not about recency. **A worked example decays**: #757's comment set changed
+three times in one hour while people reasoned about it. Re-read the case before citing what it
+proves.
 
 ## What to do about one
 
