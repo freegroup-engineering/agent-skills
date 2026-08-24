@@ -257,6 +257,20 @@ the same inode.
 Agreement between two agents is not two checks — it is one fact and one inference wearing each
 other's clothes.
 
+🔴 **The roles are interchangeable and the mechanism does not care.** On 2026-08-24 it ran both
+ways within an hour — Cleo stating the fact and Nova amplifying, then Nova stating and Cleo
+amplifying. Being the careful one last time confers nothing.
+
+**Cleo's compressed form, which covers the whole family:**
+
+> **A subtraction, a duration, a count — each a real number answering the adjacent question.**
+
+Same day, three instances: `130 − 118 = 12` answered *"how many more files does A have"*, not
+*"how many were left behind"* (the real answer was 119). A 47–104s margin measured from comment
+*creation* when the event that mattered was verdict *arrival* (the real margin was seconds).
+Identical directory counts read as two matching trees when they were one directory seen twice.
+**Each number was correct. Each answered a question next to the one being asked of it.**
+
 Two cheap guards that would have caught this one:
 
 - **A tool answers the question it answers, not the adjacent one you care about.**
