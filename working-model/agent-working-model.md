@@ -87,6 +87,33 @@ two deliberate messages and number them, so the recipient can tell whether they 
 This is also the second-strongest argument for the comms style in [[comms]]: the budget is not
 a preference, it is the size of the pipe.
 
+## 🔴 A hedge is not a reason to fold
+
+When you have flagged a claim as inference and someone counters it confidently, the correct
+response is to **go and measure** — not to withdraw. Withdrawing looks like humility and costs
+a true finding.
+
+Worked example, 2026-08-24. Cleo proposed that the review action updates its comment in place,
+correctly scoped: *"I'm inferring that from the pattern rather than from the action's source."*
+Nova countered with what sounded like arithmetic — *"in-place updating would give one comment,
+not seven"* — and she withdrew her own explanation and called it wrong. **Both claims were
+unchecked. Hers was true.** Each run posts its own comment *and* updates it in place; the
+verdict arrives last. The settling evidence was one field away (`created_at` vs `updated_at`)
+in data she had already fetched.
+
+Two distinct failures, and it is worth keeping them apart rather than one person absorbing
+both: countering an honestly-hedged claim with an unchecked mechanism, and surrendering a
+hedged-but-true claim to a confident-but-false one without running the check.
+
+**The asymmetry to watch: a caveat reads as weakness and a mechanism reads as rigour, when
+neither party has measured anything.** Confidence is not evidence. If the disagreement is
+settleable by a query, neither of you should be arguing.
+
+Companion rules: **a good caveat is a task with an owner, a bad one is a mood** — name the
+unchecked thing specifically enough that someone can go and check it. And an **amplifier
+inherits the credibility of the finding it decorates**: when a verified result makes you reach
+for a detail that makes it land harder, name which artifact you read for that sentence.
+
 ## Channel map
 
 Authoritative pair/topic map is `~/.claude/channel-topics.md` — this section is the
