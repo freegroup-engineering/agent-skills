@@ -297,6 +297,26 @@ the sentence quoted back when someone asks us to produce what it describes.
 The test on any published sentence: **is this granting us latitude, or telling someone what we
 hold?** The second must match reality exactly. The first need not, and usually should not.
 
+🔴 **Structure what ages. Keep prose for what doesn't.** Mark, 2026-08-24, refining a proposal
+to add a "Blocked by" relation to the ticket board.
+
+A restatement rots because it copies **state** — another ticket's priority, status, launch flag.
+That belongs in a field, where it updates itself. But a relation records only **that** X blocks
+Y; it cannot record **why**, and the why is what tells a reader when the block lifts.
+
+> *"INI-111 blocked by INI-109"* is a fact. *"The notice repeats the deletion promise, so it
+> cannot publish while the delete reports success when it fails"* is the reason — and it is what
+> lets someone judge whether a partial fix unblocks it, or whether a different ticket landing
+> makes the blocker stop mattering. **A bare relation would have someone waiting on the wrong
+> thing.**
+
+So the split is: **the relation replaces the copied status, which ages. The one sentence of
+reasoning stays, because it does not** — it describes the claim, not the state.
+
+Same shape as [[unexercised-controls]]'s warning that a constraint without its reason gets
+applied correctly somewhere it does not belong. Here it would be applied to a dependency that
+has already changed shape.
+
 Two cheap guards that would have caught this one:
 
 - **A tool answers the question it answers, not the adjacent one you care about.**
