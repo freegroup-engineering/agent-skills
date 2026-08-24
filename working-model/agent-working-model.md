@@ -271,6 +271,21 @@ Same day, three instances: `130 − 118 = 12` answered *"how many more files doe
 Identical directory counts read as two matching trees when they were one directory seen twice.
 **Each number was correct. Each answered a question next to the one being asked of it.**
 
+🔴 **A relayed decision is safe to record as a decision. It is never safe to record as current
+behaviour without looking.** The transformation here is *tense*, not scope — **"already decided"
+slides into "already built"**, and the sentence reads as fact because the decision genuinely was
+made.
+
+2026-08-24, and it was introduced **by the correction pass itself**: a ticket line read
+*"Payment records **deliberately keep** the real name and email"* — present tense, describing the
+system. The decision to do so was real and hours old; the implementation did not exist.
+`models/transaction.py` has no name column, no email column, and `user_id` is
+`ondelete="SET NULL"`. On a ticket whose whole purpose is that a record must answer a question
+later, that phrasing would have let someone conclude the money side was handled and close it.
+
+The catch was reading the artifact — the same move that turns suspicion into fact everywhere
+else on this page. **Before writing that a system does something, name the file you read.**
+
 Two cheap guards that would have caught this one:
 
 - **A tool answers the question it answers, not the adjacent one you care about.**
