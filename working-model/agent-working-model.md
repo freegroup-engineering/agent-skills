@@ -147,6 +147,20 @@ fix the note as well as the message — otherwise you correct the instance and k
 And when writing a memory entry, prefer the thing that stays true (a rule, a failure mode) over
 the thing that drifts (an ID, a count, a version).
 
+🔴 **The sharper form of that last one: the distinction is not ticket-versus-rule, it is pointer
+versus evidence — and a date is what converts one into the other.**
+
+- *"See INI-102 for the Redis fail-open"* is a **live pointer**. It rots the moment numbering
+  moves, and it rots silently.
+- *"On 2026-08-24, `enum.py:521` said the five keys arrive across three moments"* is a
+  **historical fact**. It cannot rot. At worst it becomes outdated, which is visible, rather than
+  wrong, which is not.
+
+The same applies to figures. `20 of 24`, `853 of 911`, `7/8/8/8` read like drifting facts and
+are not, because each is *measured on a stated date*. **A measurement with a date is evidence;
+the same number without one is a claim about now** — and it will still be asserted as a claim
+about now in three months.
+
 ## Channel map
 
 Authoritative pair/topic map is `~/.claude/channel-topics.md` — this section is the
