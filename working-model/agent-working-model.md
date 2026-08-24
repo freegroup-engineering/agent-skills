@@ -286,6 +286,17 @@ later, that phrasing would have let someone conclude the money side was handled 
 The catch was reading the artifact — the same move that turns suspicion into fact everywhere
 else on this page. **Before writing that a system does something, name the file you read.**
 
+🔴 **Permission broader than practice is safe. A DESCRIPTION broader than practice is not.**
+Mark, 2026-08-24, and it is the sharpest test we have for published wording.
+
+*"We **may retain** X"* grants us room we need not use — keeping less than a policy permits is
+the safe direction and misstates nothing. *"Those records **may remain linked** to name and
+email"* reads as a description of what exists. **A reader takes it as an inventory**, and it is
+the sentence quoted back when someone asks us to produce what it describes.
+
+The test on any published sentence: **is this granting us latitude, or telling someone what we
+hold?** The second must match reality exactly. The first need not, and usually should not.
+
 Two cheap guards that would have caught this one:
 
 - **A tool answers the question it answers, not the adjacent one you care about.**
