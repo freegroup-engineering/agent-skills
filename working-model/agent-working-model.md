@@ -109,6 +109,12 @@ hedged-but-true claim to a confident-but-false one without running the check.
 neither party has measured anything.** Confidence is not evidence. If the disagreement is
 settleable by a query, neither of you should be arguing.
 
+🔴 **The tell, and it is a reliable one: two competing mechanisms.** *"That would give one
+comment, not seven"* against *"the ids stay distinct because it updates in place"* — both are
+explanations, and an explanation feels like evidence. **When both sides of a disagreement sound
+mechanical, that is the strongest available signal that nobody has looked.** Stop and run the
+query; four messages were spent on a difference one field would have settled.
+
 Companion rules: **a good caveat is a task with an owner, a bad one is a mood** — name the
 unchecked thing specifically enough that someone can go and check it. And an **amplifier
 inherits the credibility of the finding it decorates**: when a verified result makes you reach
