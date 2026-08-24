@@ -70,6 +70,19 @@ not wrong, it was narrow.
 name suggest it covers?** The name is the risk; the body is the coverage; nothing keeps them in
 sync.
 
+This is not a testing quirk — it spans every layer, and the name is always the part that reads
+as coverage:
+
+| the thing | its name promises | its body actually covers |
+|---|---|---|
+| `deletionPolicy: Retain` on an ExternalSecret | the Secret survives | **ESO's** deletion path only — the API server's ownerReference garbage collection is a different path and is not governed by it |
+| a PDB with `maxUnavailable: 1` on a 1-replica StatefulSet | the database is protected from eviction | nothing; it permits exactly the eviction it appears to prevent |
+| an alert named `MigrationJobStuck` | the migration is stuck | a state its query cannot actually observe |
+| *"dismissing by the barrier is a NO, never a yes"* | the barrier is safe | the returned **outcome**, not the row the submit wrote |
+
+Every one of those passes, reads as diligence, and is compatible with the failure it is named
+after.
+
 Operationally, for any state-changing action: **list the axes it can move** — return value,
 persisted row, network call, emitted event, navigation — and ask which of them the test actually
 checks. **Fail-closed on one axis is not fail-closed.** The #757 test was fail-closed on the
