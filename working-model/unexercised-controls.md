@@ -30,9 +30,15 @@ trustworthy, not more.** The streak is the concealment, not the reassurance.
   rendered the objection as a passing check.
 - **The same workflow posts no inline review comments at all** across 24 PRs, though its prompt
   asks for them. Nobody noticed *because the issue comments it posts instead are good.*
-- **`layers.py`** points at a directory that does not exist on this box, so 58 of 911 published
-  strings stop at the injection layer and never reach the sensitive check. The "published
-  corpus is clean" result is real for 853 strings, not 911.
+- **A hardcoded path that RESOLVES is worse than one that errors.** `layers.py:11` and
+  `run_guard.py:42` both hardcoded `/home/ubuntu/myprojects/iniminimo-cleo/drafts/themes` — one
+  agent's *authoring* drafts in a *different checkout*. That directory exists, so nothing ever
+  failed. The harness ran cleanly and reported **2,244 strings, 107 injection hits, 80 IP hits**
+  — confident numbers describing the wrong artifact, with nothing in the output naming the
+  checkout. The published corpus is **911 strings, 58 injection, 1 IP**. The guard-corpus
+  README's headline figures are the wrong ones, off by ~2.5x.
+  *A broken tool announces itself. A tool pointed at the wrong thing returns a wrong answer
+  wearing a right answer's clothes.* (Verified by execution 2026-08-24; fixed in PR #748.)
 - **A guard's own off-switch.** The `childrensNotice` refusal (PR #756) disables itself when the
   document ships. That off-switch was mutation-tested — replace the derivation with a hardcoded
   `false` and the test must go red — because *the thing that turns a check off is the thing

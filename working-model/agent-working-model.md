@@ -161,6 +161,31 @@ are not, because each is *measured on a stated date*. **A measurement with a dat
 the same number without one is a claim about now** — and it will still be asserted as a claim
 about now in three months.
 
+## 🔴 The deliverable of a lesson is a step, not a better-worded rule
+
+2026-08-24, twice within an hour, by the two people who had just written the rules down:
+
+- Nova wrote *"a mechanical check beats a habit"* — then inlined backticks into a commit
+  message for the **second** time that day, mangling it and silently skipping the push.
+- Cleo wrote *"never accept a zero without checking the control"* — then accepted one and
+  relayed it onward.
+
+**Neither was ignorance.** Both had the rule, recently, in their own words. The failure was at
+the moment of doing, which is the only moment ever in question. So writing a better-worded rule
+is the tempting response and the wrong one — **the rules were already fine.**
+
+What actually changes behaviour is a step wired into the procedure:
+
+| when you… | the step |
+|---|---|
+| quote a zero | show the **control line** in the same output |
+| claim a push | compare `local` and `remote` SHAs — never a piped exit code |
+| arm auto-merge | re-ask what the green actually attests to |
+| cite a worked example | re-read it; examples decay |
+| assert a path exists | `ls` it |
+
+Each of those exists because knowing the rule demonstrably did not prevent the failure.
+
 ## Two mechanical habits that caught real failures today
 
 **Never inline a commit message or PR comment containing backticks.** The shell eats them as
