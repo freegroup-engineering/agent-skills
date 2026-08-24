@@ -233,6 +233,40 @@ push failure eight hours later.
 a promise about attention; a check is a thing that runs when attention is elsewhere — and
 attention being elsewhere is precisely when both of the day's silent failures happened.
 
+## 🔴 The pair failure: a fact acquires a consequence in transit
+
+The one an individual rule cannot catch, because **neither person experiences themselves as
+asserting the unchecked thing.**
+
+> One of us states a narrow true fact. The other adds the consequence that makes it urgent.
+> The amplified claim then carries the first person's credibility **and** the second's
+> confidence — and neither of those is a check.
+
+The fact-stater knows their fact is true and didn't make the alarming claim. The amplifier knows
+they're building on verified input. So a personal rule about one's own claims is structurally
+blind to it: **the unit of failure is the exchange, not either message.**
+
+Worked example, and it happened **twice with the same two people over the same directory**
+(2026-08-22, then again 2026-08-24). Cleo: *"`drafts/themes` has 0 files tracked"* — true, and
+checked. Nova: *"so it's one disk failure from gone"* — false. `iniminimo-cleo/drafts` is a
+symlink into the shared checkout, which is an rclone FUSE mount of an S3 bucket. Both paths are
+the same inode.
+
+**The check has to sit on the exchange:** when a narrow fact acquires a consequence in transit,
+**the consequence is a new claim with no evidence yet, however solid the fact underneath.**
+Agreement between two agents is not two checks — it is one fact and one inference wearing each
+other's clothes.
+
+Two cheap guards that would have caught this one:
+
+- **A tool answers the question it answers, not the adjacent one you care about.**
+  `git ls-files` answers *"is this tracked"*. It does not answer *"is this safe"*. Only one of
+  those had a tool in the sentence; the other was supplied.
+- **Identical counts across two paths should trigger `stat`, not a coincidence explanation.**
+  Two directories reporting the same file counts usually means one directory seen twice.
+  `readlink -f` finds it only if you already suspect a symlink; `stat` comparing inodes does not
+  require the suspicion.
+
 ## Channel map
 
 Authoritative pair/topic map is `~/.claude/channel-topics.md` — this section is the
