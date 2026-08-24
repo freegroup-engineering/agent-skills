@@ -112,6 +112,18 @@ proves.
 so prove the test can fail before trusting it green. Mutate the implementation, assert the test
 goes red, restore.
 
+🔴 **A control on the matcher is not a control on the corpus.** Handing a known-bad string
+straight to the screening function proves only that the *matcher* speaks. It cannot catch a
+collector that silently skipped files, or one pointed at the wrong tree — which is precisely the
+failure that went undetected here for days. **Plant the known-positive at the top of the
+pipeline and take it out again:** on 2026-08-24 a control theme dropped into the published tree
+moved the result from `files=6 strings=911 sensitive=0` to `files=7 strings=913 sensitive=1`,
+then was removed. That proves collection *and* screening. The harness's own four-item control
+list, which passed throughout, could not have.
+
+Generalised: **exercise the whole path the real input takes, not the last function in it.** Same
+shape as reading a verdict rather than the check that reports it.
+
 And when fixing one, check the fix is not another: **four separate times in one day the obvious
 repair for a fail-open would have created a fail-open.** Flipping `exit 0` to `exit 1` would
 have blocked 20 of 24 legitimate merges and been disabled within a day. A retry loop whose

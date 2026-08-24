@@ -178,7 +178,7 @@ What actually changes behaviour is a step wired into the procedure:
 
 | when you… | the step |
 |---|---|
-| quote a zero | show the **control line** in the same output |
+| quote a zero | show the **control line** in the same output — and make it a control on the **pipeline**, not the matcher (see below) |
 | claim a push | compare `local` and `remote` SHAs — never a piped exit code |
 | arm auto-merge | re-ask what the green actually attests to |
 | cite a worked example | re-read it; examples decay |
