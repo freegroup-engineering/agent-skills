@@ -46,6 +46,17 @@ trustworthy, not more.** The streak is the concealment, not the reassurance.
 - **`has_all_required()`** can never return `True` for any user today, and nothing calls it, so
   nothing observes that.
 
+🔴 **Moving an agent's working directory silently orphans its memory.** A memory namespace is
+keyed to the cwd (`~/.claude/projects/<slug>/memory/`). Change the directory and everything
+learned under the old key stops loading — **no error, no warning, and the new namespace looks
+healthy because it fills up with new material.** Found 2026-08-24: Cleo's session moved from
+`iniminimo-studio` to `iniminimo-cleo` in July. **11 files ported; 119 were left behind**, and
+107 written since made `130` vs `118` read as a rounding difference rather than most of her
+craft knowledge sitting one directory away. The files are readable — `head` works — they simply
+never load, so they are consulted only by someone who already knows to look.
+**A namespace cannot tell you what it does not contain.** After any cwd change, diff the old
+namespace against the new one; do not infer from the counts.
+
 Older members of the same family: an alert bound to a secret that never fires; a rate limiter
 that fails open with no metric, so nobody can know what got through
 (see the board's Redis fail-open ticket, **INI-102** — *not* INI-101).
