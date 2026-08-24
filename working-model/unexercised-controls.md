@@ -75,7 +75,8 @@ as coverage:
 
 | the thing | its name promises | its body actually covers |
 |---|---|---|
-| `deletionPolicy: Retain` on an ExternalSecret | the Secret survives | **ESO's** deletion path only — the API server's ownerReference garbage collection is a different path and is not governed by it |
+| `deletionPolicy: Retain` on an ExternalSecret | the Secret survives | **ESO's** deletion path only — the API server's ownerReference garbage collection is a different path and is not governed by it. 🔴 Worse: it was **defaulted, not written in git** — so it was never even a decision, just a default whose name reads as protection |
+| ArgoCD `Prune=false` | the resource will not be deleted | **sync-time** pruning only — deletion cascade when the Application itself is deleted is `Delete=false`, a separate axis again |
 | a PDB with `maxUnavailable: 1` on a 1-replica StatefulSet | the database is protected from eviction | nothing; it permits exactly the eviction it appears to prevent |
 | an alert named `MigrationJobStuck` | the migration is stuck | a state its query cannot actually observe |
 | *"dismissing by the barrier is a NO, never a yes"* | the barrier is safe | the returned **outcome**, not the row the submit wrote |
