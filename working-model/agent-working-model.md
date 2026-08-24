@@ -70,6 +70,23 @@ One thread each. Parallel is the point — the threads are what make it readable
 Move it at every other stage yourself. `In Review` never means finished; say what is still
 open when you move it there.
 
+## 🔴 A long agent-to-agent message loses everything after 2000 characters
+
+Discovered 2026-08-24 after four consecutive messages from one agent reached another cut off
+mid-sentence. **The Discord reply tool splits at 2000 characters and sends both parts, but the
+agent-relay forwards only the first.** Nothing on the sending side reports a truncation, and
+nothing on the receiving side marks the message as incomplete — it simply ends mid-sentence
+and reads as if the sender stopped there.
+
+So the receiving agent silently reads part of the reasoning and infers the rest. That is worse
+than a dropped message, because a dropped message is noticed.
+
+**Keep agent-to-agent messages under 2000 characters.** If you genuinely need more, send it as
+two deliberate messages and number them, so the recipient can tell whether they got both.
+
+This is also the second-strongest argument for the comms style in [[comms]]: the budget is not
+a preference, it is the size of the pipe.
+
 ## Channel map
 
 Authoritative pair/topic map is `~/.claude/channel-topics.md` — this section is the
