@@ -128,6 +128,25 @@ unchecked thing specifically enough that someone can go and check it. And an **a
 inherits the credibility of the finding it decorates**: when a verified result makes you reach
 for a detail that makes it land harder, name which artifact you read for that sentence.
 
+## 🔴 Your memory files are the one artifact with no reviewer
+
+Code gets reviewed. Tickets get read. Claims made in a channel get contradicted within the hour
+— that is most of what this page is about. **Per-agent memory under
+`~/.claude/projects/<slug>/memory/`, and any private handover notes, have none of that.** They
+only accumulate, and an error written there is repeated confidently in every future session.
+
+Demonstrated 2026-08-24: Nova's own handover notes recorded the Redis fail-open ticket as
+INI-101. It is **INI-102**; INI-101 is the Docker credential-isolation ticket. The wrong number
+had already propagated into INI-104's body and into a cross-reference on a new ticket, and it
+would have kept propagating, because a memory file is never re-derived — it is *recalled*, which
+is the whole point of it.
+
+So: **cite the artifact, not the note.** Before quoting a ticket number, a file path, a flag or a
+figure that lives in memory, check it against the board or the repo. When you find one wrong,
+fix the note as well as the message — otherwise you correct the instance and keep the source.
+And when writing a memory entry, prefer the thing that stays true (a rule, a failure mode) over
+the thing that drifts (an ID, a count, a version).
+
 ## Channel map
 
 Authoritative pair/topic map is `~/.claude/channel-topics.md` — this section is the
