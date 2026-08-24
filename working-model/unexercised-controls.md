@@ -91,6 +91,25 @@ axis of it reads as coverage to everyone who does not open it. Closely related t
 rule about a PR that gives an existing signal a second meaning: the tests that defended the
 consent close-code bug in July were each faithfully encoding the only meaning that had existed.
 
+## When the subject resets the observer's clock
+
+A sub-shape worth its own name, because it makes a control **under-report** rather than
+never-fire — so it looks like it is working, occasionally.
+
+`ArgoCDAppOutOfSyncTooLong` fires on a *duration* — OutOfSync continuously for 2h. The app it
+watches has `selfHeal: true`. Each self-heal attempt briefly flips the app to Synced, which
+**resets the `for:` timer**, and then it drifts back. So a permanent, unfixable drift is reported
+as an intermittent one, and the alert **resolves** on every sync blip while nothing has changed.
+Observed 2026-08-24: a `[RESOLVED]` arrived while the resource was still OutOfSync, tracking-id
+unchanged, `SharedResourceWarning` present.
+
+**A duration alert on a self-correcting subject is under-reported by the subject's own retry
+loop.** The retry is not a fix, but to the `for:` clause it is indistinguishable from one.
+
+🔴 **So a `[RESOLVED]` means the condition stopped being continuously true. It does not mean the
+problem stopped being true.** Read the object, not the notification — the same rule as reading
+the verdict rather than the check that reports it.
+
 ## Choosing a case to validate a fix
 
 The same object appears one level up, in the case you pick to prove the repair works. A case
