@@ -157,6 +157,23 @@ list, which passed throughout, could not have.
 Generalised: **exercise the whole path the real input takes, not the last function in it.** Same
 shape as reading a verdict rather than the check that reports it.
 
+## Muting a known-noisy alert without creating a new blind spot
+
+Sometimes an alert is genuinely expected noise for a known, in-flight reason. Suppressing it is
+reasonable; suppressing it **open-endedly** manufactures exactly the object this page is about —
+a control that has been switched off and looks like one that is quiet.
+
+**A mute needs an escape hatch: the specific conditions under which you stop ignoring it.**
+Written down, before the muting starts. Worked example, 2026-08-24, for a flapping
+`ArgoCDAppOutOfSyncTooLong` with a two-step fix in flight:
+
+> Filter its flaps and false `[RESOLVED]`s as known noise — **but re-triage immediately if
+> (a) it goes *continuously* firing (it stopped flapping, so the self-heal loop changed), or
+> (b) any resource other than `arc-github-token` shows OutOfSync (new drift).**
+
+Both conditions are observable and neither depends on anyone remembering the fix is pending.
+**"Ignore that alert for now" has no such conditions, and *for now* has no end.**
+
 And when fixing one, check the fix is not another: **four separate times in one day the obvious
 repair for a fail-open would have created a fail-open.** Flipping `exit 0` to `exit 1` would
 have blocked 20 of 24 legitimate merges and been disabled within a day. A retry loop whose
