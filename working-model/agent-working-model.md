@@ -115,6 +115,14 @@ explanations, and an explanation feels like evidence. **When both sides of a dis
 mechanical, that is the strongest available signal that nobody has looked.** Stop and run the
 query; four messages were spent on a difference one field would have settled.
 
+🔴 **The hardest number to catch is a wrong one that supports a correct worry.** 2026-08-24: a
+race margin was measured from comment *creation* when the event that matters is verdict
+*arrival*. The figure was reassuring, the instinct it was attached to was right, and nothing
+felt off — so nobody re-derived it. A number that contradicts you gets checked immediately; one
+that agrees with you is adopted. **Ask what event a figure measures, not whether it supports
+your reading.** It was caught only because someone noticed the figure answered a different
+question than the one being asked of it.
+
 Companion rules: **a good caveat is a task with an owner, a bad one is a mood** — name the
 unchecked thing specifically enough that someone can go and check it. And an **amplifier
 inherits the credibility of the finding it decorates**: when a verified result makes you reach
