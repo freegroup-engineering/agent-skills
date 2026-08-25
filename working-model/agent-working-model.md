@@ -137,6 +137,17 @@ on this page as a name to look up"* — **and you still have to rewrite the sent
 protects a reader who is *on* the page. It protects nobody who **quotes from** it, and quoting is
 how references travel.
 
+🔴 **Refined the same day, and the refinement is the real rule: the failure was the CLAIM, not
+the form.** The six bad pages said *"numbers corrected"* — asserting completion they had not
+achieved. A banner that instead states **what it did not do** — *"no number below has been
+individually re-checked"* — misleads nobody; it hands the reader an accurate warning rather than
+a false assurance. **A banner is safe when it declares its own limits and dangerous when it
+implies completeness.**
+
+Which gives the practical split: **rewrite the sentences in any document that gets quoted
+elsewhere** — that is where a legend cannot follow — and a limits-declaring legend is adequate
+for documents read in place.
+
 🔴 **Two misses were possessives.** `INI-35's framing`, `INI-86's recorded mistake` — a sweep keyed
 on the citation shape (`INI-NN —`, `INI-NN (name)`) skips them, because there the number is doing
 **grammatical** work rather than sitting in a reference slot. Which is the pattern-matching version
