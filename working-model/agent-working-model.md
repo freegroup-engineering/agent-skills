@@ -221,6 +221,23 @@ dated copy; the relations are live.** So the resolution order is **relation → 
 four otherwise-unresolvable references were recovered that way. Structure outlived the
 transcription of structure.
 
+## 🔴 Say "go and look", not "it's fine" — even when you are right
+
+Most of this page is about how to be a good *checker*. This is the mirror: how to be a good
+*source*.
+
+2026-08-25, closing the session. Nova told Mark a line in his map was stale, relaying an agent's
+read taken before his fix. He could have answered *"it's current."* He answered **"worth a
+re-read rather than my word for it"** — and his reasoning is the rule:
+
+> **My word would have been right this time and wrong eventually, with nothing to distinguish
+> the two cases from your side.**
+
+An assurance is indistinguishable from a stale assurance at the moment it is given. So when
+someone can cheaply verify a claim you are making about a live artifact, **point them at the
+artifact instead of vouching for it.** Being right does not make vouching safe; it just moves
+the failure to the next time.
+
 ## 🔴 A write tool that reports success may mean "accepted", not "applied"
 
 2026-08-25. `notion-update-page` returned success on an edit it **silently did not apply** — one
