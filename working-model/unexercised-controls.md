@@ -69,6 +69,49 @@ that fails open with no metric, so nobody can know what got through
 than numbered 2026-08-25, because that number has now moved twice and the name has not; the
 earlier miscite of it as INI-101 is the worked example in [[agent-working-model]]).
 
+## 🔴 THE WORKED EXTREME: a control that never fired, and rotted in THREE independent ways
+
+2026-08-25, found auditing backup/DR posture on Ronen's request. The strongest instance of this
+page's thesis yet, because the decay is *countable*.
+
+`preprod/pg-backup` is a CronJob. It was created **2026-07-09 with `suspend: true`** and has
+**never run once** — `lastScheduleTime` and `lastSuccessfulTime` both empty, zero Jobs.
+
+**The control question was asked properly**, and this is the part to copy: the auditor did not
+report "the fields are empty" and stop. Empty fields are ambiguous — a never-run job and a broken
+reporting path look identical. So it checked a **positive control**: `synthetic-canary`, in the
+same namespace, has all three fields populated. *The fields do report. This one has nothing to
+report.* **A negative finding needs a control that proves the instrument works** — see
+[[feedback_instrument_shares_your_hypothesis_bug]].
+
+**Then the count.** In eleven quiet weeks it acquired **three independent fatal defects**, any one
+of which alone would have broken it:
+
+1. it ships **suspended**, pending terraform TODOs that never landed;
+2. its destination bucket `iniminimo-db-backups-preprod` **does not exist** — 404;
+3. its `postgres:16` client would now **version-mismatch** the live PostgreSQL **18.6** server.
+
+Unsuspending it fixes nothing. Creating the bucket fixes nothing. **Each repair in isolation leaves
+a job that still cannot produce a backup**, and each would *feel* like the fix — which is how a
+"we turned backups back on" ticket closes green with no backup existing.
+
+🔴 **This is the corollary made concrete: quiet time does not preserve a control, it lets defects
+accumulate in it undetected.** A control that has run every day has one bug at a time, because each
+one surfaces. A control that has never run collects them silently and unboundedly. **So the repair
+estimate for a never-fired control is not "flip the switch" — it is "audit the whole path, then
+flip the switch, then watch it actually produce the artifact."**
+
+And the artifact is the only proof. Not the job succeeding — the **backup file existing and having
+been restored from.** Restore had also never been performed; the runbook (`docs/runbooks/db-restore.md`)
+was specified and never written. Same shape as reading a verdict rather than the check that reports it.
+
+**The root cause was a label, not a mechanism.** `infra/gcp/environments/preprod/main.tf:8` still
+says *"kill-after-test: deletion_protection off, force_destroy on buckets"*, while
+`core/config.py` says *"preprod is our live environment"* in three places. Every downstream gap —
+`force_destroy = true` on the bucket holding 26.7 GB of unversioned single-copy generated video,
+no snapshots, no PITR — is faithful to a label nobody re-decided when the environment's job
+changed. See [[feedback_label_that_contradicts_the_thing_it_labels]]: the fix starts with a rename.
+
 ## The near miss: a control exercised on the wrong axis
 
 There is a second shape the three questions above do **not** catch, because it answers them
