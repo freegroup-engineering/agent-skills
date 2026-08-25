@@ -245,6 +245,16 @@ the failure to the next time.
 dropped with no error. It was caught only because the agent **read the page back after writing**.
 Splitting it into short plain-text fragments worked.
 
+🔴 **And the second failure mode: applied, but mangled.** A string-replace edit can land
+*successfully* and still leave the sentence broken — the tool matches a substring and has no view
+of the prose it lands in. One repair on 2026-08-25 took three passes; both extra passes were
+self-inflicted, producing a clause reading `The target is** it is **"Alert on…`. Neither was
+reported as an error.
+
+So **the read-back has to be a read, not a diff check.** A diff tells you your change went in. Only
+reading the surrounding sentence tells you the result is a sentence. Particularly galling on that
+ticket, where the thing being repaired *was* a self-contradicting sentence.
+
 **Treat a success response from a write API as an acknowledgement of receipt, not evidence of
 effect** — especially for rich-text or structured-content endpoints, where a fragment the parser
 dislikes can be discarded rather than rejected. **Read back what you wrote.** The same rule that
