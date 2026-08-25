@@ -119,6 +119,30 @@ two deliberate messages and number them, so the recipient can tell whether they 
 This is also the second-strongest argument for the comms style in [[comms]]: the budget is not
 a preference, it is the size of the pipe.
 
+## 🔴 A banner attests to an intention, not a per-sentence result
+
+2026-08-25, and it corrects a call made the same morning. Faced with dozens of stale references
+across many documents, the cheap fix looked like a **dated banner at the top** pointing at the
+correcting map — reasoning that rewriting every number is a chance to introduce a *new* wrong
+number, and a new one is indistinguishable from an old one. That risk was real: two wrong claims
+were introduced and reversed during the repair itself.
+
+**But the banner failed on a different axis than the one it defended.** Six pages carried a
+*"numbers corrected"* banner and were still wrong — one fixed the last mention in a paragraph and
+missed two earlier ones. **A page wearing a correction banner reads as MORE trustworthy than an
+untouched one**, so the banner buys the reader's trust before earning it.
+
+**The decisive form:** a legend must sit at the **top** and be binding — *"treat any bare number
+on this page as a name to look up"* — **and you still have to rewrite the sentences.** A legend
+protects a reader who is *on* the page. It protects nobody who **quotes from** it, and quoting is
+how references travel.
+
+🔴 **Two misses were possessives.** `INI-35's framing`, `INI-86's recorded mistake` — a sweep keyed
+on the citation shape (`INI-NN —`, `INI-NN (name)`) skips them, because there the number is doing
+**grammatical** work rather than sitting in a reference slot. Which is the pattern-matching version
+of the defect the page is about: correct handling of the shape you looked for, silence on the
+adjacent one.
+
 ## 🔴 A hedged candidate left in a document hardens into the record
 
 2026-08-25. An unresolvable ticket reference had a plausible candidate written beside it, properly
