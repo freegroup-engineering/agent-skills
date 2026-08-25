@@ -119,6 +119,23 @@ two deliberate messages and number them, so the recipient can tell whether they 
 This is also the second-strongest argument for the comms style in [[comms]]: the budget is not
 a preference, it is the size of the pipe.
 
+## 🔴 A correct link beside a stale number is worse than either alone
+
+Found 2026-08-25 while repairing the Notion migration: a ticket's "deferred follow-up" carried a
+link whose **target was right** and whose **label named a different ticket number**. Clicking it
+works, so nobody discovers the mismatch — and the *number* is what a person quotes into Discord,
+a commit message or a document, where it travels alone and resolves to something else. **The
+working half conceals the broken half.**
+
+When repairing references, check that a link's text agrees with its target. **A link that
+resolves is not evidence that its label is correct.**
+
+The same repair proved why the number should not have been there at all: two tickets carried the
+parent's number **in their titles** while already holding a `Parent item` relation to that
+parent. The relation survived the renumbering untouched; the title text did not. **The number
+was a decaying duplicate of a link that already worked** — the argument for structure over
+prose, made by the thing failing rather than by us.
+
 ## 🔴 A hedge is not a reason to fold
 
 When you have flagged a claim as inference and someone counters it confidently, the correct
