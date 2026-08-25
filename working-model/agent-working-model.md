@@ -119,6 +119,28 @@ two deliberate messages and number them, so the recipient can tell whether they 
 This is also the second-strongest argument for the comms style in [[comms]]: the budget is not
 a preference, it is the size of the pipe.
 
+## 🔴 A reference work is thin exactly where its author didn't need it — and they can't see it
+
+2026-08-25. Mark built the old→new ticket map that made the migration recoverable, from a
+snapshot that held every row. **Eleven rows never made it into the table** — dropped while
+transcribing, all clustered in the engineering range he had not been working in.
+
+**The tell was the clustering, and only a second reader could see it.** From inside, the map
+looked complete: every lookup *he* needed resolved. The gaps sat precisely where his own work
+never took him, so nothing he did would ever surface them. His own summary is the rule:
+**a map built by the person who only needed half of it.**
+
+So when you inherit a reference work — a map, a runbook, a glossary, a schema — **ask what the
+author was doing when they wrote it, and expect it to be thinnest furthest from that.** And if
+you find gaps, report the *shape* of them, not just the count: "nine missing" is a nuisance,
+"nine missing and all in one area" is a diagnosis.
+
+🔴 **The stronger lesson is what replaced it.** `Parent item` and `Sub-item` relations survived
+the renumbering untouched and identify a ticket independently of any number. **The map is a
+dated copy; the relations are live.** So the resolution order is **relation → map → ask**, and
+four otherwise-unresolvable references were recovered that way. Structure outlived the
+transcription of structure.
+
 ## 🔴 A correct link beside a stale number is worse than either alone
 
 Found 2026-08-25 while repairing the Notion migration: a ticket's "deferred follow-up" carried a
