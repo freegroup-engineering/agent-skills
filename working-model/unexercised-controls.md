@@ -1,5 +1,11 @@
 # Unexercised controls — a defect hidden by things going well
 
+> 🔴 **Banner added 2026-08-25 — any ticket number on this page predates that day's Notion
+> workspace migration.** Every ticket kept its content and got a **new** ID, so an old `INI-NN`
+> still resolves — **to a different, real ticket.** Resolve by name through the old→new map at
+> `~/myprojects/iniminimo-mark/docs/notion-ticket-id-map-2026-08-25.md`; the old board is deleted
+> and cannot be read.
+
 **Rule (all agents: Nova, Cleo, Margo, Boaz, Mark + subagents). Written 2026-08-24 from a day
 in which the same object turned up in five different subsystems.**
 
@@ -59,7 +65,9 @@ namespace against the new one; do not infer from the counts.
 
 Older members of the same family: an alert bound to a secret that never fires; a rate limiter
 that fails open with no metric, so nobody can know what got through
-(see the board's Redis fail-open ticket, **INI-102** — *not* INI-101).
+(see the board's Redis fail-open ticket, **"Every Redis-backed guard fails OPEN"** — named rather
+than numbered 2026-08-25, because that number has now moved twice and the name has not; the
+earlier miscite of it as INI-101 is the worked example in [[agent-working-model]]).
 
 ## The near miss: a control exercised on the wrong axis
 

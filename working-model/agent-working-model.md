@@ -1,5 +1,16 @@
 # Agent working model — how we talk to Ronen and to each other
 
+> 🔴 **Banner added 2026-08-25 — ticket numbers on this page predate that day's Notion workspace
+> migration.** Every ticket kept its content and got a **new** ID, so an old `INI-NN` still
+> resolves — **to a different, real ticket.** Plausible, resolvable, wrong, and nothing announces
+> it. **Do not trust a bare number on this page.** Resolve it through the old→new map at
+> `~/myprojects/iniminimo-mark/docs/notion-ticket-id-map-2026-08-25.md`, the only surviving
+> record — the old board is deleted and cannot be read.
+>
+> References below were converted to **names with no number** where the ticket is the point of
+> the sentence. Where the number *itself* is the subject of a worked example it was **kept as the
+> old number and annotated in place** — rewriting those would destroy the example.
+
 **Rule (all agents: Nova, Cleo, Margo, Boaz, Mark + every subagent). Set by Ronen, 2026-08-24.
 This is standing process, not a preference. He should never have to explain it again.**
 
@@ -77,8 +88,10 @@ A ticket that spans backend and frontend gets **one subtask per agent**, each wi
 owner, its own status, and its own thread. Ronen talks BE in the backend owner's thread and FE
 in the frontend owner's thread; the two owners talk to each other in their shared channel.
 
-**INI-54 is the worked example**: INI-64 (BE, Nova) / INI-65 (FE, Cleo), with the cross-side
-payload contract settled between the two agents, not in his thread.
+**The parent/guardian attestation ticket is the worked example** — *"Parent/guardian attestation
+step + consent record"*, split into *"BE consent record"* (Nova) and *"FE attestation step"*
+(Cleo), with the cross-side payload contract settled between the two agents, not in his thread.
+*(Named rather than numbered, 2026-08-25 — see the banner.)*
 
 ## 6. Several tickets run in parallel
 
@@ -160,6 +173,14 @@ had already propagated into INI-104's body and into a cross-reference on a new t
 would have kept propagating, because a memory file is never re-derived — it is *recalled*, which
 is the whole point of it.
 
+🔴 **The four numbers in that paragraph are pre-migration and are kept on purpose** — they are the
+**subject** of the example, not pointers to follow, and rewriting them would destroy it. For the
+record, added 2026-08-25: the Redis fail-open ticket is *"Every Redis-backed guard fails OPEN"*,
+and the 2026-08-25 renumber moved it again. **INI-101 and INI-104 are not in the surviving
+old→new map at all**, so their current numbers are unknown and must not be guessed. Which is the
+lesson arriving a second time: this paragraph is about a number being wrong, and the number in it
+went wrong again by a route nobody was watching.
+
 So: **cite the artifact, not the note.** Before quoting a ticket number, a file path, a flag or a
 figure that lives in memory, check it against the board or the repo. When you find one wrong,
 fix the note as well as the message — otherwise you correct the instance and keep the source.
@@ -170,7 +191,9 @@ the thing that drifts (an ID, a count, a version).
 versus evidence — and a date is what converts one into the other.**
 
 - *"See INI-102 for the Redis fail-open"* is a **live pointer**. It rots the moment numbering
-  moves, and it rots silently.
+  moves, and it rots silently. **And it did** — 2026-08-25, the whole board was renumbered in a
+  workspace migration, so that sentence now points at a different real ticket. The example
+  keeps its original number because the number is what it is *about*.
 - *"On 2026-08-24, `enum.py:521` said the five keys arrive across three moments"* is a
   **historical fact**. It cannot rot. At worst it becomes outdated, which is visible, rather than
   wrong, which is not.
@@ -304,7 +327,9 @@ A restatement rots because it copies **state** — another ticket's priority, st
 That belongs in a field, where it updates itself. But a relation records only **that** X blocks
 Y; it cannot record **why**, and the why is what tells a reader when the block lifts.
 
-> *"INI-111 blocked by INI-109"* is a fact. *"The notice repeats the deletion promise, so it
+> *"INI-111 blocked by INI-109"* is a fact. *(Pre-migration numbers, kept 2026-08-25 because
+> they are the illustration; the tickets are "Publish the Children's Privacy Notice" and "The
+> child-photo delete swallows its own failure".)* *"The notice repeats the deletion promise, so it
 > cannot publish while the delete reports success when it fails"* is the reason — and it is what
 > lets someone judge whether a partial fix unblocks it, or whether a different ticket landing
 > makes the blocker stop mattering. **A bare relation would have someone waiting on the wrong
@@ -312,6 +337,11 @@ Y; it cannot record **why**, and the why is what tells a reader when the block l
 
 So the split is: **the relation replaces the copied status, which ages. The one sentence of
 reasoning stays, because it does not** — it describes the claim, not the state.
+
+🔴 **Vindicated the next morning, 2026-08-25.** The board moved workspace and every ticket was
+renumbered. **A relation would have survived it; a sentence containing `INI-109` did not** — and
+did not break either, it silently started pointing somewhere else. This is the argument for the
+relation, and it is no longer hypothetical.
 
 Same shape as [[unexercised-controls]]'s warning that a constraint without its reason gets
 applied correctly somewhere it does not belong. Here it would be applied to a dependency that
