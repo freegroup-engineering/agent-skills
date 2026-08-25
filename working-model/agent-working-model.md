@@ -119,6 +119,25 @@ two deliberate messages and number them, so the recipient can tell whether they 
 This is also the second-strongest argument for the comms style in [[comms]]: the budget is not
 a preference, it is the size of the pipe.
 
+## 🔴 A hedged candidate left in a document hardens into the record
+
+2026-08-25. An unresolvable ticket reference had a plausible candidate written beside it, properly
+hedged: *"reads as X — confirm before relying on it."* The agent then **removed its own note**,
+and the reasoning is the rule: while someone is identifying that reference from a primary source,
+**a plausible candidate sitting on the page is exactly the thing that becomes the answer.** The
+hedge does not survive being read by a hurried third party; the name does.
+
+So when you cannot resolve something and someone else is working on it, write **what it is not**
+— "unresolved; today this number points at Y, which is a different ticket" — and stop. Naming the
+wrong answer is safe. Offering a right-looking one is not.
+
+🔴 **The mirror of it: a true-sounding negative stops the next person looking.** The same day, a
+reference work said of two missing entries *"neither appears in the new board's first hundred, so
+they are either above it or were closed."* Reasonable, and wrong — one of them was sitting at
+ID 101, findable by reading the page. **A confident absence claim closes an enquiry more
+effectively than a wrong answer does**, because nobody re-checks a search someone else already
+reported as exhausted. State the search you actually ran, not the conclusion you drew from it.
+
 ## 🔴 A reference work is thin exactly where its author didn't need it — and they can't see it
 
 2026-08-25. Mark built the old→new ticket map that made the migration recoverable, from a
