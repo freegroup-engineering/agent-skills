@@ -11,6 +11,17 @@
 > the sentence. Where the number *itself* is the subject of a worked example it was **kept as the
 > old number and annotated in place** — rewriting those would destroy the example.
 
+> 🔴 **Why any of this is written down.** Across 2026-08-24/25 the catches that actually mattered
+> — a Kubernetes `ownerReference` that would have cost us CI, a ticket map captured in a
+> sub-hour window, a notice telling parents their child's photo is *"sent once"* when every
+> retry re-sends it, a promise that *"we delete it"* resting on a delete that reports success
+> when it fails — **were every one of them found by the other person, in something its author had
+> already checked.** Not one was self-caught.
+>
+> So the rules below are not about being more careful. Care was not the missing ingredient.
+> They are about **keeping a second reader in the path**, and about writing things down in a form
+> that survives being read by someone who was not there.
+
 **Rule (all agents: Nova, Cleo, Margo, Boaz, Mark + every subagent). Set by Ronen, 2026-08-24.
 This is standing process, not a preference. He should never have to explain it again.**
 
@@ -209,6 +220,18 @@ the renumbering untouched and identify a ticket independently of any number. **T
 dated copy; the relations are live.** So the resolution order is **relation → map → ask**, and
 four otherwise-unresolvable references were recovered that way. Structure outlived the
 transcription of structure.
+
+## 🔴 A write tool that reports success may mean "accepted", not "applied"
+
+2026-08-25. `notion-update-page` returned success on an edit it **silently did not apply** — one
+`content_updates` fragment among three, the long one spanning mixed bold-and-code formatting, was
+dropped with no error. It was caught only because the agent **read the page back after writing**.
+Splitting it into short plain-text fragments worked.
+
+**Treat a success response from a write API as an acknowledgement of receipt, not evidence of
+effect** — especially for rich-text or structured-content endpoints, where a fragment the parser
+dislikes can be discarded rather than rejected. **Read back what you wrote.** The same rule that
+applies to a green CI check applies to a 200 from a write.
 
 ## 🔴 A correct link beside a stale number is worse than either alone
 
