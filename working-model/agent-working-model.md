@@ -148,6 +148,21 @@ Which gives the practical split: **rewrite the sentences in any document that ge
 elsewhere** — that is where a legend cannot follow — and a limits-declaring legend is adequate
 for documents read in place.
 
+🔴 **And the generalisation, which reaches well past banners (Mark, 2026-08-25):**
+
+> **Anything that describes its own coverage is making a claim about coverage — and that claim
+> gets audited least, because it looks like housekeeping.**
+
+A banner saying *"numbers corrected"*, a caveat that is really an assertion, a control that
+reports success whether or not it ran, a test summary, a "verified" note at the top of a
+document: all of them are load-bearing claims dressed as metadata. **Read the coverage statement
+as the strongest claim on the page, not the least interesting one.**
+
+Closing note from the same repair, and it is the method the whole exercise argues for: the final
+unresolvable reference was found in minutes **by searching the new board for the ticket's name**.
+It had been open for two hours because both of us kept looking for it *as a number*. **The name
+was durable; the number was not.**
+
 🔴 **Two misses were possessives.** `INI-35's framing`, `INI-86's recorded mistake` — a sweep keyed
 on the citation shape (`INI-NN —`, `INI-NN (name)`) skips them, because there the number is doing
 **grammatical** work rather than sitting in a reference slot. Which is the pattern-matching version
