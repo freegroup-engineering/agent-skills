@@ -584,3 +584,41 @@ explicitly addressed to Cleo, who could not see them. Anything addressed to the 
 `~/knowledge/` or `~/.claude/CLAUDE.md`, never in one agent's memory dir.
 
 See also: [[worktree-discipline]], [[ticket-status-workflow]].
+
+## 🔴 THE BOX IS SHARED — A PATTERN-MATCHED KILL IS A PATTERN-MATCHED KILL OF SOMEONE ELSE'S WORK
+
+**All agents. Added 2026-08-26 after a subagent reported it against itself.**
+
+Clearing its own deadlocked pollers, an agent ran:
+
+```
+pkill -f "run_backend_tests.sh"
+```
+
+That matches **every process on the box**, not its own. Nova, Cleo, Margo, Boaz and every
+subagent share this machine, and several run the same test script from their own worktrees.
+Anyone mid-run at that moment lost it — and what they saw was an unexplained cancellation with
+no cause attached to it, in a build they had no reason to think was fragile.
+
+🔴 **The damage is invisible from both ends.** The killer sees its own processes stop, which is
+what it wanted. The victim sees a build die for no reason and re-runs it, assuming flake. Nothing
+in either transcript names the other. **This class of mistake cannot be found afterwards — only
+prevented, or self-reported.** It was self-reported here, which is the only reason it is written
+down.
+
+**The rule: kill PIDs you have, never a pattern you hope only matches you.**
+
+- track the PID when you start something in the background, and kill *that*;
+- if you must search, **scope by your own working directory** and confirm before acting:
+  `ps -eo pid,args | grep <pattern>` → check each `cwd` → kill the specific pids;
+- `pkill -f`, `killall`, and any `pkill` without a `-t`/`-u`/`--session` narrowing are
+  **box-wide** on this machine. Treat them the way you treat `git stash` in a shared checkout:
+  a command whose blast radius is other people.
+
+Same family as the standing rule about never running `git stash` in the shared checkout — that one
+silently removes another agent's untracked files, this one silently removes their running work.
+**Both feel local. Neither is.**
+
+If you think you may have hit someone, **say so in the channel with the time window** rather than
+hoping. A mystery build failure someone else is debugging is far more expensive than the
+embarrassment of owning it.
