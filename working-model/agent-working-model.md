@@ -622,3 +622,16 @@ silently removes another agent's untracked files, this one silently removes thei
 If you think you may have hit someone, **say so in the channel with the time window** rather than
 hoping. A mystery build failure someone else is debugging is far more expensive than the
 embarrassment of owning it.
+
+## 🔴 POST THE PR LINK IN ITS THREAD, THEN PIN IT
+
+**Ronen, 2026-08-26:** *"quick way to access pr links instead of me guessing. when you create a new pr in a thread, i want you to post the title and link and then pin it."*
+
+**Every agent. When a PR is opened for work being tracked in a thread:**
+
+1. post the **title and the URL** in that thread, as its own message;
+2. **pin that message** (`PUT /channels/<thread_id>/messages/pins/<message_id>`).
+
+Why it is worth the extra call: a thread accumulates dozens of messages in a working day, and the link is the one thing he needs repeatedly and cannot reconstruct. Scrolling for it, or asking, is a cost paid every single time — pinning is paid once.
+
+**Re-pin when the PR is superseded**, and say so, rather than leaving two pinned links where the stale one looks current. Same discipline as the rest of this page: a pointer that resolves to the wrong thing is worse than no pointer.
